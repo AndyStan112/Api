@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import './components/css/Team.css';
 import './components/css/Player.css';
+
 import React, {useEffect, useState} from "react";
 import {HashRouter, Route} from "react-router-dom";
 import axios from "axios";
@@ -13,7 +14,7 @@ function App() {
 	
 	
       const [players, setPlayers] = useState(null);
-      const [text, setText] = useState(null)
+      const [teams, setteams] = useState(null)
       var tmp= [];
       function update(){
 
@@ -22,7 +23,7 @@ function App() {
           url: '/getteaminfolist', 
       }).then((response) => response.data, (error) => {
           console.log(error);
-        }).then(users => {setText(users);console.log(users)});
+        }).then(users => {setteams(users);console.log(users)});
         axios({
           method: 'post',
           url: '/gettotalplayerlist', 
@@ -39,16 +40,16 @@ function App() {
       .then(response => response.json())
       .then(users => {
       
-       setText(JSON.parse(users))
+       setteams(JSON.parse(users))
       
       
       })
     }
     function renderPlayers(){
 
-      if (text != null && players!=null){
+      if (teams != null && players!=null){
 
-        return text["teamInfoList"].map((team,index)=>{return (<Team team={team} playerData={players["playerInfoList"]}/>) })
+        return teams["teamInfoList"].sort(function(a,b){return a.teamId-b.teamId}).map((team,index)=>{return (<Team team={team} playerData={players["playerInfoList"]}/>) })
       }
       else return (<p>HI</p>)
 

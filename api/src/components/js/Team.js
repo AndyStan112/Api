@@ -20,9 +20,9 @@ function Team( {team, playerData} ){
     return (
 
         <div className="Team" style={getTeamColor()}>
-            <img src={getImage(teamId)} width="100" height="100"></img>
-            <p className={className}>
-            {s(teamId)} {teamName} <br/><br/>
+            <img src={getImage(teamId)} className="Players" width="85" height="85"></img>
+            <p className="Players">
+            {s(teamId)} {teamName} 
             </p>
             <div className="Players"> 
 
