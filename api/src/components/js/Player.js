@@ -1,17 +1,13 @@
 import React, {useEffect, useState} from "react";
 
-function User(props){
+function Player( {player , id} ){
 
-    
-    let text=props.text;
+    const { teamId , playerName } = player;
+
+    if(id === teamId)
     return (
-
-        <div className = "Team" >
-
-            <p className={props.className}>data : {text}</p>
-
-        </div>
-
-    )     
+        <p>{ playerName }</p>
+    ) 
+    return null;
 }
-export default User;
+export default Player;

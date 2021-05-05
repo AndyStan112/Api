@@ -10,8 +10,8 @@
   width:500px;
   height:500px;
   opacity: 1 ;
-  /* padding-bottom: 100 cm; background-color:red;*/
-  
+  /* padding-bottom: 100 cm;background-color:red;*/
+   
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

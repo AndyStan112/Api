@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  
+    // aici se transforma Javascript in HTML
     <App />,
   document.getElementById('root')
 );
