@@ -1,0 +1,13 @@
+{
+
+      text["playerInfoList"].map((x,y)=>{
+
+        return (
+
+          <p>Player :{x["playerName"]} </p>
+
+        )
+
+      })
+
+        }
