@@ -1,0 +1,13 @@
+.Player {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: fit-content;
+  align-items: center;
+}
+
+.Player img {
+  width: 1.33em;
+  height: 1.33em;
+  margin-left: 0.3em;
+}

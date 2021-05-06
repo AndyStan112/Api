@@ -1,68 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
-import './components/css/Team.css';
-import './components/css/Player.css';
+import "./App.css";
 
-import React, {useEffect, useState} from "react";
-import {HashRouter, Route} from "react-router-dom";
-import axios from "axios";
-import Team from './components/js/Team.js'
-
-
+import React, { useEffect, useState } from "react";
+import Team from "./components/Team";
+import { tap, getJSONIfOK } from "./lib/util";
 
 function App() {
-	
-	
-      const [players, setPlayers] = useState(null);
-      const [teams, setteams] = useState(null)
-      var tmp= [];
-      function update(){
+  const [teams, setTeams] = useState({
+    left: [],
+    right: [],
+  });
 
-        axios({
-          method: 'post',
-          url: '/getteaminfolist', 
-      }).then((response) => response.data, (error) => {
-          console.log(error);
-        }).then(users => {setteams(users);console.log(users)});
-        axios({
-          method: 'post',
-          url: '/gettotalplayerlist', 
-      }).then((response) => response.data, (error) => {
-          console.log(error);
-        }).then(users => {setPlayers(users);console.log(users)});
-        
-      }
-    useEffect(() => {update();const interval =setInterval(update,6000);return ()=>clearInterval(interval)}, []);
-    console.log('here1');
-    function test() {
-    
-      fetch("https://random-data-api.com/api/address/random_address")
-      .then(response => response.json())
-      .then(users => {
-      
-       setteams(JSON.parse(users))
-      
-      
-      })
+  async function update() {
+    try {
+      const {
+        allinfo: { TeamInfoList: teams = [], TotalPlayerList: players = [] },
+      } = await fetch("/getallinfo").then(getJSONIfOK).then(tap(console.log));
+
+      const teamsWithPlayers = teams
+        .sort((a, b) => a.teamId - b.teamId)
+        .map((team) => ({
+          ...team,
+          players: players.filter((player) => player.teamId === team.teamId),
+        }))
+        .map((team) => <Team team={team} />);
+
+      setTeams({
+        left: teamsWithPlayers.slice(0, 8),
+        right: teamsWithPlayers.slice(8),
+      });
+    } catch (err) {
+      console.error({ updateError: err });
     }
-    function renderPlayers(){
+  }
 
-      if (teams != null && players!=null){
+  useEffect(() => {
+    update();
+    const interval = setInterval(() => {
+      update();
+      console.log(teams);
+    }, 6000);
 
-        return teams["teamInfoList"].sort(function(a,b){return a.teamId-b.teamId}).map((team,index)=>{return (<Team team={team} playerData={players["playerInfoList"]}/>) })
-      }
-      else return (<p>HI</p>)
+    return () => clearInterval(interval);
+  }, []);
 
-    }
   return (
     <div className="App">
-      <header className="App-header">
-        <div className= "Teams">{
-          renderPlayers()
-        } 
-        </div>
-        
-      </header>
+      <div className="Teams">{teams.left}</div>
+      <span />
+      <div className="Teams right">{teams.right}</div>
     </div>
   );
 }

@@ -1,13 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
-    // aici se transforma Javascript in HTML
-    <App />,
-  document.getElementById('root')
+  // aici se transforma Javascript in HTML
+  <App />,
+  document.body
 );
 
 // If you want to start measuring performance in your app, pass a function
