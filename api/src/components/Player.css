@@ -9,5 +9,7 @@
 .Player img {
   width: 1.33em;
   height: 1.33em;
-  margin-left: 0.3em;
+  align-self: center;
+  margin-left: auto;
+  order: 2;
 }

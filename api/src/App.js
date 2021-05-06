@@ -26,7 +26,7 @@ function App() {
 
       setTeams({
         left: teamsWithPlayers.slice(0, 8),
-        right: teamsWithPlayers.slice(8),
+        right: teamsWithPlayers.slice(8, 16),
       });
     } catch (err) {
       console.error({ updateError: err });
@@ -38,7 +38,7 @@ function App() {
     const interval = setInterval(() => {
       update();
       console.log(teams);
-    }, 6000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);

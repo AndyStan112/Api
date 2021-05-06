@@ -12,6 +12,7 @@ const getTextStyles = (state) => {
   return {
     color: "white",
     fontWeight: "bold",
+    paddingLeft: "5px",
   };
 };
 

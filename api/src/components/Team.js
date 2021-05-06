@@ -5,7 +5,7 @@ import Player from "./Player";
 
 const getImage = (id) => `icon/0${id < 10 ? "0" : ""}${id}.png`;
 
-const getTeamColor = (alive) => ({ color: alive ? "white" : "gray" });
+const getTeamColor = (alive) => ({ color: alive ? "yellow" : "gray" });
 
 function Team({ team }) {
   const { teamId, teamName, liveMemberNum, players } = team;
@@ -15,8 +15,8 @@ function Team({ team }) {
       <div class="image">
         <img src={getImage(teamId)} />
       </div>
-      <p>
-        {teamId} {teamName}
+      <p className="bigText">
+        #{teamId} {teamName}
       </p>
       <div className="Players">
         {players.map((player) => (
