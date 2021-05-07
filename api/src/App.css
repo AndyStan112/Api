@@ -13,7 +13,10 @@
   padding-left: 0em;
 }
 
-.Teams .right {
-  grid-column-start: 3;
-  padding-left: 0;
+.Teams.left .Team:first-child .bigText .ID {
+  font-size: 275%;
+}
+
+.Teams.left .Team:first-child .bigText .teamName {
+  display: none;
 }

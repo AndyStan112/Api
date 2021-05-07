@@ -8,7 +8,7 @@
 }
 
 .Team .image {
-  width: 100%;
+  width: 90px;
   padding: 1em 0 1em 1em;
 }
 
@@ -32,6 +32,12 @@
   display: grid;
   gap: 0.25em;
   grid-template-rows: repeat(4, 1fr);
-  padding-left: 9px;
-  margin-right: 11px;
+}
+
+.Teams.right .Team .Players {
+  margin-right: 20px;
+}
+
+.Teams.left .Team .Players {
+  margin-right: 14px;
 }

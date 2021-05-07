@@ -14,16 +14,20 @@ function Team({ team }) {
       <div class="image">
         <img src={getImage(teamId)} />
       </div>
-      <p className="bigText">
-        #{teamId} {teamName}
-      </p>
+      <div className="bigText">
+        <p className="ID">#{teamId}</p>
+        <p className="teamName"> {teamName}</p>
+      </div>
       <div className="Players">
         {players.map((player) => (
-          <Player player={player} />
+          <Player id={player.uId} player={player} />
         ))}
       </div>
     </div>
   );
 }
+
+// React DOM
+// :first-child { display : none; }
 
 export default Team;

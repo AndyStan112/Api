@@ -48,8 +48,21 @@ function App() {
 
   return (
     <div className="App">
-      <div className="Teams">{teams.left}</div>
+      <div className="Teams left">{teams.left}</div>
       <span />
+
+      {/* 
+
+    div TEAMS RIGHT 
+      Team TEAM
+      Team TEAM 
+      Team TEAM
+      Team TEAM
+      Team TEAM
+      Team TEAM
+      Team TEAM
+      Team TEAM
+    */}
       <div className="Teams right">{teams.right}</div>
     </div>
   );
