@@ -2,12 +2,24 @@
   display: flex;
   flex-direction: row;
   height: 100%;
-  width: fit-content;
+  width: 100%;
+  margin-right: 10px;
   align-items: center;
+  justify-content: flex-start;
+  font-weight: "bold";
 }
-
+.Player p {
+  text-align: end;
+  width: 100%;
+}
 .Player img {
   width: 1.33em;
   height: 1.33em;
-  margin-left: 0.3em;
+  align-self: center;
+  margin-left: auto;
+}
+
+.Player .empty {
+  width: 1.33em;
+  height: 1.33em;
 }
