@@ -11,8 +11,6 @@ const getTextStyles = (state) => {
 
   return {
     color: "white",
-    fontWeight: "bold",
-    paddingLeft: "5px",
   };
 };
 
@@ -20,9 +18,9 @@ function Player({ player }) {
   const { playerName, liveState } = player;
 
   let knockdownIcon = <></>;
-  if (isKnocked(liveState)) {
+  if (isDead(liveState)) {
     knockdownIcon = <img src={"knockCross.png"} />;
-  }
+  } else knockdownIcon = <div className="empty"></div>;
 
   return (
     <div className="Player">

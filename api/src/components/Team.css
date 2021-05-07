@@ -33,4 +33,5 @@
   gap: 0.25em;
   grid-template-rows: repeat(4, 1fr);
   padding-left: 9px;
+  margin-right: 11px;
 }

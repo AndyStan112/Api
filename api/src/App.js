@@ -3,6 +3,7 @@ import "./App.css";
 import React, { useEffect, useState } from "react";
 import Team from "./components/Team";
 import { tap, getJSONIfOK } from "./lib/util";
+import lastAPICall from "./data1.json";
 
 function App() {
   const [teams, setTeams] = useState({
@@ -10,19 +11,21 @@ function App() {
     right: [],
   });
 
+  //ECMAScript
+
   async function update() {
     try {
       const {
         allinfo: { TeamInfoList: teams = [], TotalPlayerList: players = [] },
-      } = await fetch("/getallinfo").then(getJSONIfOK).then(tap(console.log));
-
+      } = lastAPICall;
+      // await fetch("/getallinfo").then(getJSONIfOK).then(tap(console.log));
       const teamsWithPlayers = teams
         .sort((a, b) => a.teamId - b.teamId)
         .map((team) => ({
           ...team,
           players: players.filter((player) => player.teamId === team.teamId),
         }))
-        .map((team) => <Team team={team} />);
+        .map((team) => <Team id={team.teamId} team={team} />);
 
       setTeams({
         left: teamsWithPlayers.slice(0, 8),
