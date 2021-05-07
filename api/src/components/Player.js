@@ -32,3 +32,4 @@ function Player({ player }) {
 }
 
 export default Player;
+export default Player;
