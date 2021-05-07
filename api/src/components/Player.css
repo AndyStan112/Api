@@ -3,18 +3,26 @@
   flex-direction: row;
   height: 100%;
   width: 100%;
-  margin-right: 10px;
   align-items: center;
   justify-content: flex-start;
   font-weight: "bold";
 }
+
+.Teams.left .Team .Players .Player {
+  width: 97%;
+}
+
+.Teams.right .Team .Players .Player {
+  margin-left: 0px;
+}
+
 .Player p {
   text-align: end;
   width: 100%;
 }
 .Player img {
-  width: 1.33em;
-  height: 1.33em;
+  width: 0.75em;
+  height: 0.7em;
   align-self: center;
   margin-left: auto;
 }

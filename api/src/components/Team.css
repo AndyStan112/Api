@@ -20,7 +20,7 @@
 .Team p {
   align-self: center;
   height: auto;
-  padding-left: 15px;
+  padding-right: 10px;
 }
 
 .bigText {
@@ -30,14 +30,15 @@
 .Players {
   height: 100%;
   display: grid;
-  gap: 0.25em;
+  margin-top: 10px;
+  gap: 0.3em;
   grid-template-rows: repeat(4, 1fr);
 }
 
 .Teams.right .Team .Players {
-  margin-right: 20px;
+  margin-right: 29px;
 }
 
 .Teams.left .Team .Players {
-  margin-right: 14px;
+  margin-right: 20px;
 }
