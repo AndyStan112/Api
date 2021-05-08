@@ -17,8 +17,7 @@ function App() {
     try {
       const {
         allinfo: { TeamInfoList: teams = [], TotalPlayerList: players = [] },
-      } = lastAPICall;
-      // await fetch("/getallinfo").then(getJSONIfOK).then(tap(console.log));
+      } = await fetch("/getallinfo").then(getJSONIfOK).then(tap(console.log));
       const teamsWithPlayers = teams
         .sort((a, b) => a.teamId - b.teamId)
         .map((team) => ({

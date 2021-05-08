@@ -1,3 +1,30 @@
+
+*{
+  --font-size : 275%; 
+  --image-size : 190px;
+  --font-size-player : 200%;  
+  --margin-right-Right : 57px;
+  --margin-right-Left :  30px;
+  --team-gap : 3em;
+  --margin-left-for-big-icons : 15px;
+  --small-icon-width : 1.45em;
+  --small-icon-height: 1.4em;
+  }
+@media (min-width : 1080px) and (max-width : 1920px){
+  *{
+    --font-size : 175%;
+    --image-size : 90px;
+    --font-size-player : 100%;
+    --margin-right-Right : 29px;
+    --margin-right-Left : 20px;
+    --team-gap : 1em;
+    --margin-left-for-big-icons : 0;
+    --small-icon-width : 0.75em;
+    --small-icon-height: 0.7em;
+  }
+}
+
+
 .App {
   display: grid;
   width: 100%;
@@ -13,10 +40,3 @@
   padding-left: 0em;
 }
 
-.Teams.left .Team:first-child .bigText .ID {
-  font-size: 275%;
-}
-
-.Teams.left .Team:first-child .bigText .teamName {
-  display: none;
-}
