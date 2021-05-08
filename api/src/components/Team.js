@@ -10,7 +10,7 @@ const getTeamColor = (alive) =>{
   };
   return {
   color : "grey", 
-  backgroundColor : "rgba(132, 132, 132, 0.19)"
+  //backgroundColor : "rgba(132, 132, 132, 0.19)"
   }
 }
 

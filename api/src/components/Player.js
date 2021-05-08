@@ -18,7 +18,7 @@ function Player({ player }) {
   const { playerName, liveState } = player;
 
   let knockdownIcon = <></>;
-  if (isDead(liveState)) {
+  if (isKnocked(liveState)) {
     knockdownIcon = <img src={"knockIcon.png"} />;
   } else knockdownIcon = <div className="empty"></div>;
 
