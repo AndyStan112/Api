@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: flex-start;
   font-weight: "bold";
+ 
 }
 
 .Teams.left .Team .Players .Player {
@@ -20,15 +21,19 @@
   font-size: var(--font-size-player);
   text-align: end;
   width: 100%;
+ 
 }
 .Player img {
   width: var(--small-icon-width);
   height: var(--small-icon-height);
-  align-self: center;
+  align-self: bottom;
   margin-left: auto;
+  
 }
 
 .Player .empty {
   width: 1.33em;
   height: 1.33em;
+
+  
 }

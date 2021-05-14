@@ -5,20 +5,21 @@ import Player from "./Player";
 const getImage = (id) => `icon/0${id < 10 ? "0" : ""}${id}.png`;
 
 const getTeamColor = (alive) =>{ 
-  if(alive)return{
-    color : "white", 
+  if(alive==4)return{
+    color : "yellow", 
   };
-  return {
+  if(alive==0)return {
   color : "grey", 
-  //backgroundColor : "rgba(132, 132, 132, 0.19)"
-  }
+  backgroundColor : "rgba(132, 132, 132, 0.19)",
+  filter: "grayscale(100%)",
+  };
+  else return{color:"white"}
 }
 
 function Team({ team }) {
   const { teamId, teamName, liveMemberNum, players } = team;
-
   return (
-    <div className="Team" style={getTeamColor(liveMemberNum > 0)}>
+    <div className="Team" style={getTeamColor(liveMemberNum)}>
       <div class="image">
         <img src={getImage(teamId)} />
       </div>

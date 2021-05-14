@@ -7,8 +7,8 @@
   --margin-right-Left :  30px;
   --team-gap : 3em;
   --margin-left-for-big-icons : 15px;
-  --small-icon-width : 1.45em;
-  --small-icon-height: 1.4em;
+  --small-icon-width : 1.33em;
+  --small-icon-height: 1.33em;
   }
 @media (min-width : 1080px) and (max-width : 1920px){
   *{
@@ -19,8 +19,8 @@
     --margin-right-Left : 20px;
     --team-gap : 1em;
     --margin-left-for-big-icons : 0;
-    --small-icon-width : 0.75em;
-    --small-icon-height: 0.7em;
+    --small-icon-width : 0.8em;
+    --small-icon-height: 0.8em;
   }
 }
 
@@ -31,8 +31,21 @@
   padding: 0 0 0 1em;
   grid-template-columns: 21% auto 21.5%;
 }
+.tes {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-fill-mode:forwards;
+}
 
+@keyframes example {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}
 .Teams {
+ 
   padding: 0.1em 0;
   display: grid;
   grid-template-columns: 100%;

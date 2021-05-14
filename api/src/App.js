@@ -6,10 +6,15 @@ import { tap, getJSONIfOK } from "./lib/util";
 import lastAPICall from "./data1.json";
 
 function App() {
+  Array.prototype.forEachChain = function () {
+    this.forEach(...arguments);
+    return this;
+};
   const [teams, setTeams] = useState({
     left: [],
     right: [],
   });
+  const [cache, setCache] = useState([]);
 
   //ECMAScript
 
@@ -17,7 +22,7 @@ function App() {
     try {
       const {
         allinfo: { TeamInfoList: teams = [], TotalPlayerList: players = [] },
-      } = await fetch("/getallinfo").then(getJSONIfOK).then(tap(console.log));
+      } = lastAPICall//await fetch("/getallinfo").then(getJSONIfOK).then(tap(console.log));
       const teamsWithPlayers = teams
         .sort((a, b) => a.teamId - b.teamId)
         .map((team) => ({
@@ -48,7 +53,7 @@ function App() {
   return (
     <div className="App">
       <div className="Teams left">{teams.left}</div>
-      <span />
+      <div className="tes"><p>hi</p></div>
       <div className="Teams right">{teams.right}</div>
     </div>
   );

@@ -19,7 +19,7 @@ function Player({ player }) {
 
   let knockdownIcon = <></>;
   if (isKnocked(liveState)) {
-    knockdownIcon = <img src={"knockIcon.png"} />;
+    knockdownIcon = <img src={"knockCross.png"} />;
   } else knockdownIcon = <div className="empty"></div>;
 
   return (

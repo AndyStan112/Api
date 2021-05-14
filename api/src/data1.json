@@ -226,7 +226,7 @@
             "posZ":1565,
             "health":92,
             "healthMax":100,
-            "liveState":0,
+            "liveState":4,
             "killNum":1,
             "killNumBeforeDie":1,
             "signalHP":100,
