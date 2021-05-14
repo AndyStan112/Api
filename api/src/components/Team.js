@@ -5,10 +5,10 @@ import Player from "./Player";
 const getImage = (id) => `icon/0${id < 10 ? "0" : ""}${id}.png`;
 
 const getTeamColor = (alive) =>{ 
-  if(alive==4)return{
+  if(alive===4)return{
     color : "yellow", 
   };
-  if(alive==0)return {
+  if(alive===0)return {
   color : "grey", 
   backgroundColor : "rgba(132, 132, 132, 0.19)",
   filter: "grayscale(100%)",

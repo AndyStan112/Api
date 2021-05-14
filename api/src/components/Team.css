@@ -1,5 +1,5 @@
 .Team {
-  margin-left: calc(var(--margin-left-for-big-icons)-10px);
+  margin-left: calc(var(--margin-left-for-big-icons)-0px);
   display: grid;
   gap: var(--team-gap);
   grid-template-columns: 1fr 1fr 2fr;
@@ -7,7 +7,7 @@
   height: calc((100vh - 5em) / 8);
   align-items: center;
   
-  background-color: rgba(43, 220, 226, 0.301);
+ 
 }
 
 .Team .image {
@@ -27,11 +27,11 @@
 }
 
 .bigText {
-  font-size: calc(var(--font-size)-1);
+  font-size: var(--font-size);
 }
 
 .Players {
-  height: 100%;
+  height: 90%;
   display: grid;
   margin-top: 10px;
   gap: 0em;
