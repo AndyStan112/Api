@@ -3,8 +3,8 @@
   --font-size : 270%; 
   --image-size : 190px;
   --font-size-player : 200%;  
-  --margin-right-Right : 57px;
-  --margin-right-Left :  30px;
+  --margin-right-Right : 30px;
+  --margin-right-Left :  5px;
   --team-gap : 2em;
   --margin-left-for-big-icons : 15px;
   --small-icon-width : 1.33em;
@@ -31,7 +31,7 @@
   padding: 0 0 0 1em;
   grid-template-columns: 21.25% auto 21.5%;
 }
-.tes {
+/*.tes {
   width: 100px;
   height: 100px;
   background-color: red;
@@ -43,7 +43,7 @@
 @keyframes example {
   from {background-color: red;}
   to {background-color: yellow;}
-}
+}*/
 .Teams {
  
   padding: 0.1em 0;

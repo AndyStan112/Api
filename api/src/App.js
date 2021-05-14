@@ -22,7 +22,7 @@ function App() {
     try {
       const {
         allinfo: { TeamInfoList: teams = [], TotalPlayerList: players = [] },
-      } = lastAPICall//await fetch("/getallinfo").then(getJSONIfOK).then(tap(console.log));
+      } = await fetch("/getallinfo").then(getJSONIfOK).then(tap(console.log));
       const teamsWithPlayers = teams
         .sort((a, b) => a.teamId - b.teamId)
         .map((team) => ({
@@ -53,7 +53,7 @@ function App() {
   return (
     <div className="App">
       <div className="Teams left">{teams.left}</div>
-      <div className="tes"><p>hi</p></div>
+     <span/>
       <div className="Teams right">{teams.right}</div>
     </div>
   );
