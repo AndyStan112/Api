@@ -22,7 +22,7 @@ function App() {
     try {
       const {
         allinfo: { TeamInfoList: teams = [], TotalPlayerList: players = [] },
-      } = await fetch("/getallinfo").then(getJSONIfOK).then(tap(console.log));
+      } =await fetch("/getallinfo").then(getJSONIfOK).then(tap(console.log));
       const teamsWithPlayers = teams
         .sort((a, b) => a.teamId - b.teamId)
         .map((team) => ({
@@ -30,7 +30,7 @@ function App() {
           players: players.filter((player) => player.teamId === team.teamId),
         }))
         .map((team) => <Team id={team.teamId} team={team} />);
-
+        
       setTeams({
         left: teamsWithPlayers.slice(0, 8),
         right: teamsWithPlayers.slice(8, 16),
