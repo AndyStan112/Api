@@ -15,11 +15,11 @@ function App() {
     right: [],
   });
   const [cache, setCache] = useState([]);
-
   //ECMAScript
-
+  
   async function update() {
     try {
+      const temp = [];
       const {
         allinfo: { TeamInfoList: teams = [], TotalPlayerList: players = [] },
       } =await fetch("/getallinfo").then(getJSONIfOK).then(tap(console.log));
@@ -29,8 +29,12 @@ function App() {
           ...team,
           players: players.filter((player) => player.teamId === team.teamId),
         }))
-        .map((team) => <Team id={team.teamId} team={team} />);
-        
+        .map((team)=>{
+          temp.push(team);
+          return team;
+        })
+        .map((team, index) => <Team id={team.teamId} team={team} cache = { cache[index] }/>);
+        setCache(temp);
       setTeams({
         left: teamsWithPlayers.slice(0, 8),
         right: teamsWithPlayers.slice(8, 16),

@@ -16,10 +16,17 @@ const getTeamColor = (alive) =>{
   else return{color:"white"}
 }
 
-function Team({ team }) {
-  const { teamId, teamName, liveMemberNum, players } = team;
+function Team({ team , cache }) {
+  const { teamId, teamName, liveMemberNum : currentMemberNum, players } = team;
+  const { liveMemberNum : lastMemberNum } = cache || team;
+  
+  if(!currentMemberNum && currentMemberNum !== lastMemberNum)
+  {
+     
+  }
+  
   return (
-    <div className="Team" style={getTeamColor(liveMemberNum)}>
+    <div className="Team" style={getTeamColor(currentMemberNum)}>
       <div class="image">
         <img src={getImage(teamId)} />
       </div>
