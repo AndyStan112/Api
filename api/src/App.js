@@ -4,12 +4,10 @@ import React, { useEffect, useState } from "react";
 import Team from "./components/Team";
 import { tap, getJSONIfOK } from "./lib/util";
 import lastAPICall from "./data1.json";
+import {BrowserRouter as Router,Route,Link} from "react-router-dom";
 
 function App() {
-  Array.prototype.forEachChain = function () {
-    this.forEach(...arguments);
-    return this;
-};
+ 
   const [teams, setTeams] = useState({
     left: [],
     right: [],
@@ -22,7 +20,7 @@ function App() {
       const temp = [];
       const {
         allinfo: { TeamInfoList: teams = [], TotalPlayerList: players = [] },
-      } =await fetch("/getallinfo").then(getJSONIfOK).then(tap(console.log));
+      } =lastAPICall//await fetch("/getallinfo").then(getJSONIfOK).then(tap(console.log));
       const teamsWithPlayers = teams
         .sort((a, b) => a.teamId - b.teamId)
         .map((team) => ({
@@ -55,11 +53,19 @@ function App() {
   }, []);
 
   return (
+    <Router>
+    
+    <Route path="/harta" render={
+    ()=>{return(
     <div className="App">
       <div className="Teams left">{teams.left}</div>
      <span/>
       <div className="Teams right">{teams.right}</div>
     </div>
+
+    )}}/>
+    <Route path="/teamkill" render={()=>{return(<div style={{backgroundColor:"yellow",height:"200px",float:"top"}}><p>hi</p></div>)}}/>
+    </Router>
   );
 }
 
