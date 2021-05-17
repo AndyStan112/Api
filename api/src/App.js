@@ -65,7 +65,7 @@ function App() {
     </div>
 
     )}}/>
-    <Route path="/TeamKill" component={TeamKill} teams={teams} cache={cache}/>
+    <Route path="/TeamKill" component={<TeamKill teams={teams} cache={cache} />}/>
     </Router>
   );
 }

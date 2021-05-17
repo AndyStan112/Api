@@ -25,9 +25,13 @@
   height: auto;
   padding-right: 10px;
 }
+.ID{
+  font-size: var(--font-size);
 
+}
 .bigText {
   font-size: var(--font-size);
+  display: flex;
 }
 
 .Players {

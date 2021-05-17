@@ -31,8 +31,10 @@ function Team({ team , cache }) {
         <img src={getImage(teamId)} />
       </div>
       <div className="bigText">
-        <p className="ID">#{teamId}</p>
-        <p className="teamName"> {teamName}</p>
+        
+        <p className="teamName">#</p>
+        <p className="ID">{teamId}</p>
+       
       </div>
       <div className="Players">
         {players.map((player) => (
