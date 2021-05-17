@@ -2,6 +2,7 @@ import "./App.css";
 
 import React, { useEffect, useState } from "react";
 import Team from "./components/Team";
+import TeamKill from "./components/TeamKill";
 import { tap, getJSONIfOK } from "./lib/util";
 import lastAPICall from "./data1.json";
 import {BrowserRouter as Router,Route,Link} from "react-router-dom";
@@ -46,7 +47,7 @@ function App() {
     update();
     const interval = setInterval(() => {
       update();
-      console.log(teams);
+      //console.log(teams);
     }, 3000);
 
     return () => clearInterval(interval);
@@ -57,14 +58,14 @@ function App() {
     
     <Route path="/harta" render={
     ()=>{return(
-    <div className="App">
-      <div className="Teams left">{teams.left}</div>
+    <div className="App"> 
+      <div className="Teams left">{(()=>{console.log(teams.left);return teams.left})()}</div>
      <span/>
       <div className="Teams right">{teams.right}</div>
     </div>
 
     )}}/>
-    <Route path="/teamkill" render={()=>{return(<div style={{backgroundColor:"yellow",height:"200px",float:"top"}}><p>hi</p></div>)}}/>
+    <Route path="/TeamKill" component={TeamKill} teams={teams} cache={cache}/>
     </Router>
   );
 }
