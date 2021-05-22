@@ -13,7 +13,7 @@ const getTeamColor = (alive) =>{
   backgroundColor : "rgba(132, 132, 132, 0.19)",
   filter: "grayscale(100%)",
   };
-  else return{color:"white"}
+  else return{color:"yellow"}
 }
 
 function Team({ team , cache }) {
