@@ -7,8 +7,8 @@
   --margin-right-Left :  10px;
   --team-gap : 0.7em;
   --margin-left-for-big-icons : 15px;
-  --small-icon-width : 1.33em;
-  --small-icon-height: 1.33em;
+  --small-icon-width : 1.6em;
+  --small-icon-height: 1.5em;
   }
 @media (min-width : 1080px) and (max-width : 1920px){
   *{

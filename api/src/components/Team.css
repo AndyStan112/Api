@@ -44,7 +44,7 @@
   height: 90%;
   display: grid;
   margin-top: 10px;
-  gap: 0em;
+  gap: 0.7em;
   grid-template-rows: repeat(4, 1fr);
 }
 
