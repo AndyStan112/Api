@@ -1,14 +1,17 @@
 .Team {
+  margin-left: calc(var(--margin-left-for-big-icons)-0px);
   display: grid;
-  gap: 1em;
+  gap: var(--team-gap);
   grid-template-columns: 1fr 1fr 2fr;
   grid-template-rows: 100%;
   height: calc((100vh - 5em) / 8);
   align-items: center;
+  
+ 
 }
 
 .Team .image {
-  width: 90px;
+  width: var(--image-size);
   padding: 1em 0 1em 1em;
 }
 
@@ -24,21 +27,22 @@
 }
 
 .bigText {
-  font-size: 175%;
+  font-size: var(--font-size);
 }
 
 .Players {
-  height: 100%;
+  height: 90%;
   display: grid;
   margin-top: 10px;
-  gap: 0.3em;
+  gap: 0em;
   grid-template-rows: repeat(4, 1fr);
 }
 
 .Teams.right .Team .Players {
-  margin-right: 29px;
+  margin-right: var(--margin-right-Right);
 }
 
 .Teams.left .Team .Players {
-  margin-right: 20px;
+  margin-right: var(--margin-right-Left);
 }
+

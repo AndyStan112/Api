@@ -1,11 +1,51 @@
+
+*{
+  --font-size : 270%; 
+  --image-size : 190px;
+  --font-size-player : 200%;  
+  --margin-right-Right : 30px;
+  --margin-right-Left :  5px;
+  --team-gap : 2em;
+  --margin-left-for-big-icons : 15px;
+  --small-icon-width : 1.33em;
+  --small-icon-height: 1.33em;
+  }
+@media (min-width : 1080px) and (max-width : 1920px){
+  *{
+    --font-size : 175%;
+    --image-size : 90px;
+    --font-size-player : 100%;
+    --margin-right-Right : 29px;
+    --margin-right-Left : 20px;
+    --team-gap : 1em;
+    --margin-left-for-big-icons : 0;
+    --small-icon-width : 0.8em;
+    --small-icon-height: 0.8em;
+  }
+}
+
+
 .App {
   display: grid;
   width: 100%;
   padding: 0 0 0 1em;
-  grid-template-columns: 21% auto 21.5%;
+  grid-template-columns: 21.25% auto 21.5%;
+}
+/*.tes {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-fill-mode:forwards;
 }
 
+@keyframes example {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}*/
 .Teams {
+ 
   padding: 0.1em 0;
   display: grid;
   grid-template-columns: 100%;
@@ -13,10 +53,3 @@
   padding-left: 0em;
 }
 
-.Teams.left .Team:first-child .bigText .ID {
-  font-size: 275%;
-}
-
-.Teams.left .Team:first-child .bigText .teamName {
-  display: none;
-}
