@@ -28,6 +28,8 @@
   height: var(--small-icon-height);
   align-self: bottom;
   margin-left: auto;
+  margin-top: 1px;
+
   
 }
 

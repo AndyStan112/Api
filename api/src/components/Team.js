@@ -13,7 +13,7 @@ const getTeamColor = (alive) =>{
   backgroundColor : "rgba(132, 132, 132, 0.19)",
   filter: "grayscale(100%)",
   };
-  else return{color:"white"}
+  else return{color:"yellow"}
 }
 
 function Team({ team , cache }) {
@@ -31,8 +31,10 @@ function Team({ team , cache }) {
         <img src={getImage(teamId)} />
       </div>
       <div className="bigText">
-        <p className="ID">#{teamId}</p>
-        <p className="teamName"> {teamName}</p>
+        
+        <p className="teamName">#</p>
+        <p className="ID">{teamId}</p>
+       
       </div>
       <div className="Players">
         {players.map((player) => (
